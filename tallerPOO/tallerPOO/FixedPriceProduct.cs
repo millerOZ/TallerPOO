@@ -15,10 +15,10 @@ namespace tallerPOO
         public override string? ToString()
         {
             return $"{Id}" +
-               $"{Description} " +
-               $"Price: {Price}, " +
-               $"Tax: {Tax}, " +
-               $"Value: {ValueToPay()}";
+               $"\t{Description} " + 
+               $"\n\tPrice...............: {$"{Price:C2}",15}, " +
+               $"\n\tTax.................: {$"{Tax:P2}",15}, " +
+               $"\n\tValue...............: {$"{ValueToPay():C2}",15}";
         }
     }
 }

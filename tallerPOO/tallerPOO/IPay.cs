@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace tallerPOO
 {
-    internal interface IPay
+    public interface IPay
     {
+        public decimal ValueToPay();
     }
 }
