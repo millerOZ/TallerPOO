@@ -7,17 +7,27 @@
         public override decimal ValueToPay()
         {
             decimal priceAux = 0;
-            foreach (var item in Products)
+            foreach (var product in Products)
             {
-                priceAux += item.ValueToPay();
+                priceAux += product.ValueToPay();
             }
             return priceAux - priceAux * (decimal)Discount ;
         }
-        public override string? ToString()
+        private string _productName()
         {
+            string name = "";
+            foreach (var product in Products)
+            {
+                name += product.Description + ", ";
+            }
+            return name;
+        }
+        public override string? ToString()
+        {   
+            
             return $"{Id}" +
                $"\t{Description} " +
-               $"\n\tProducts............: {$"{Products}",15}, " +
+               $"\n\tProducts............: {$"{_productName()}",15}, " +
                $"\n\tDiscount............: {$"{Discount:P2}",15}, " +
                $"\n\tValue...............: {$"{ValueToPay():C2}",15}";
         }
